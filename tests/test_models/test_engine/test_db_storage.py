@@ -11,27 +11,27 @@ import os
 
 
 # skip these test if the storage is not db
-@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db', "skip if not fs")
+@unittest.skipIf(os.getenv("HBNB_TYPE_STORAGE") != "db", "skip if not fs")
 class TestDBStorage(unittest.TestCase):
     """DB Storage test"""
 
     def setUp(self):
-        """ Set up test environment """
+        """Set up test environment"""
         self.storage = models.storage
 
     def tearDown(self):
-        """ Remove storage file at end of tests """
+        """Remove storage file at end of tests"""
         del self.storage
 
     def test_user(self):
-        """ Tests user """
+        """Tests user"""
         user = User(name="Chyna", email="chyna@gmail.com", password="Chyna12345")
         user.save()
         self.assertFalse(user.id in self.storage.all())
         self.assertEqual(user.name, "Chyna")
 
     def test_city(self):
-        """ test city """
+        """test city"""
         state = State(name="California")
         state.save()
         city = City(name="Batch")
@@ -41,7 +41,7 @@ class TestDBStorage(unittest.TestCase):
         self.assertEqual(city.name, "Batch")
 
     def test_state(self):
-        """ test state"""
+        """test state"""
         state = State(name="California")
         state.save()
         self.assertFalse(state.id in self.storage.all())
@@ -69,14 +69,14 @@ class TestDBStorage(unittest.TestCase):
         self.assertEqual(place.name, "Palace")
 
     def test_amenity(self):
-        """ test amenity """
+        """test amenity"""
         amenity = Amenity(name="Startlink")
         amenity.save()
         self.assertFalse(amenity.id in self.storage.all())
         self.assertTrue(amenity.name, "Startlink")
 
     def test_review(self):
-        """ test review """
+        """test review"""
         state = State(name="California")
         state.save()
 
@@ -99,5 +99,5 @@ class TestDBStorage(unittest.TestCase):
         self.assertEqual(review.text, "no comment")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
