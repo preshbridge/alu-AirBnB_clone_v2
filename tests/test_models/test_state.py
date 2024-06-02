@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Defines unnittests for models/state.py."""
 import os
 import pep8
@@ -178,3 +179,24 @@ class TestState(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+=======
+""" """
+from tests.test_models.test_base_model import TestBaseModel
+from models.state import State
+
+
+class TestState(TestBaseModel):
+    """Test for state """
+
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "California"
+        self.value = State
+
+    def test_name3(self):
+        """ """
+        new = self.value()
+        new.name = "Arizona"
+        self.assertEqual(type(new.name), str)
+>>>>>>> b1fa1d382925b0b468b9c8c4bd58d388899a4f0f

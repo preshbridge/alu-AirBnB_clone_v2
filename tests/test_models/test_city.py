@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Defines unnittests for models/city.py."""
 import os
 import pep8
@@ -200,3 +201,32 @@ class TestCity(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+=======
+""" """
+from models.state import State
+from tests.test_models.test_base_model import TestBaseModel
+from models.city import City
+
+
+class TestCity(TestBaseModel):
+    """ Test for city"""
+
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "City"
+        self.value = City
+
+    def test_state_id(self):
+        """ """
+        state = State()
+        new = self.value()
+        new.state_id = state.id
+        self.assertEqual(type(new.state_id), str)
+
+    def test_name(self):
+        """ """
+        new = self.value()
+        new.name = "Batch"
+        self.assertEqual(type(new.name), str)
+>>>>>>> b1fa1d382925b0b468b9c8c4bd58d388899a4f0f

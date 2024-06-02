@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Defines unnittests for models/amenity.py."""
 import os
 import pep8
@@ -170,3 +171,24 @@ class TestAmenity(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+=======
+""" """
+from tests.test_models.test_base_model import TestBaseModel
+from models.amenity import Amenity
+
+
+class TestAmenity(TestBaseModel):
+    """ Test for amenity"""
+
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "Amenity"
+        self.value = Amenity
+
+    def test_name2(self):
+        """ """
+        new = self.value()
+        new.name = "amenity"
+        self.assertEqual(type(new.name), str)
+>>>>>>> b1fa1d382925b0b468b9c8c4bd58d388899a4f0f

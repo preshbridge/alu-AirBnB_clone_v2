@@ -67,5 +67,10 @@ class BaseModel:
         """Return the print/str representation of the BaseModel instance."""
         d = self.__dict__.copy()
         d.pop("_sa_instance_state", None)
+<<<<<<< HEAD
         return "[{}] ({}) {}".format(type(self).__name__, self.id, d) 
     
+=======
+        return "[{}] ({}) {}".format(type(self).__name__, self.id, d)
+        
+>>>>>>> b1fa1d382925b0b468b9c8c4bd58d388899a4f0f
